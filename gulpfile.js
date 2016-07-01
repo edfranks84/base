@@ -93,7 +93,7 @@ gulp.task('imagemin', function() {
   gulp.src(imgSrc)
     .pipe(changed(imgSrc))
     .pipe(imagemin())
-    .pipe(notify("Images minified"))
+    //.pipe(notify("Images minified"))
     .pipe(gulp.dest(imgSrc));
 });
 
