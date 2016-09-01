@@ -29,14 +29,30 @@ $s-Font-family: ;
 $s-Font-size: 16;
 $s-Font-lineheight: 1.6;
 
+// Font Stacks ----------- //
+
+$body-font: ; 
+$body-font-italic: ;
+$body-font-bold: ;
+$heading-font: ; 
+$heading-font-bold: ; 
+$alt-font: ;
+
+
 // Base colours ---- s represents 'Site' //
-$s-Color-white: #FFFFFF;
-$s-Color-black: #2f2f2f;
-$s-Color-base: #61459b;
-$s-Color-comp: #326e50;
-$s-Color-grey: #CCCCCC;
+$white: #FFFFFF;
+$black: #2f2f2f;
+$base: blue;
+$comp: red;
+$grey: #888888;
+$l-grey: #f5f5f5;
 
 //links
-$s-Color_link: blue;
-$s-Color_link-focus: green;
-$s-Color_link-hover: purple;
+$link: blue;
+$link-focus: green;
+$link-hover: purple;
+
+//paths
+$img-path: "../images";
+$svg-path: "../images/svg";
+$font-path: "../fonts";

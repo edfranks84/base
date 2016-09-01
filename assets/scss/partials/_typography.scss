@@ -8,54 +8,74 @@
 \* ---------------------------------------------- */
 
 h1, h2, h3, h4, h5, h6{
-	
-
-	&.type-Size{
-
-		&-small{}
-		&-med{}
-		&-large{}
-	}
+	font-family: $heading-font;
+	font-style: normal;
+    color: inherit;
+    text-rendering: optimizeLegibility;
+    margin: 2em 0 0.75em;
+    line-height: 1.5;
+    &:first-child{
+    	margin-top: 0;
+    }
 }
 
 h1{
-
+	font-family: $heading-font;
+	font-size: ms(4);
+	@include respond-to(480){
+		font-size: ms(5);
+	}
+	@include respond-to(920){
+		font-size: ms(6);
+	}
 }
 
 h2{
-
+	font-family: $heading-font;
+	font-size: ms(3);
+	@include respond-to(480){
+		font-size: ms(4);
+	}
 }
 
 h3{
-
+	font-family: $heading-font;
+	font-size: ms(3);
 }
 
 h4{
-
+	font-family: $heading-font;
+	font-size: ms(2);
 }
 
 h5{
-
+	font-family: $heading-font;
+	font-size: ms(2);
 }
 
 h6{
-
+	font-family: $heading-font;
+	font-size: ms(1);
 }
 
-p{
-	margin-bottom: ms(2);
-
-	&:last-child{
-		margin-bottom: 0;
+p{	
+	font-family: $body-font;
+	font-size: ms(0);
+	line-height: 1.7;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	&:not(:last-child){
+		margin-bottom: 1.4em;
 	}
 }
 
 strong{
-	// change if using @fontface
-	font-weight: bold;
+	font-family: $body-font-bold;
+	font-style: normal;
 }
 
 em{
-	// change if using @fontface
-	font-style: italic;
+	font-family: $body-font-italic;
+	font-style: normal;
 }
