@@ -5,17 +5,15 @@
 	<title>Document</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- inject:css -->
-  <link rel="stylesheet" href="/assets/css/siddith.css">
+  <link rel="stylesheet" href="/assets/css/my-project.css">
   <!-- endinject -->
 
 	<script src="/assets/js/vendor/modernizr.js"></script>
-	<script src="/assets/js/vendor/jquery-1.11.2.min.js"></script>
-	<!-- inject:js -->
-  <script src="/assets/js/siddith.js"></script>
-  <!-- endinject -->
+	<script src="/bower_components/jquery/dist/jquery.min.js"></script>
+
 </head>
 <body>
-	<h1>Lunchbox Scaffold v2.1</h1>
+	<h1>Base</h1>
   <p>Updated 11/03/16</p>
 
   <div class="test">
@@ -24,16 +22,6 @@
 
 	<!-- triggers the measurement plugin for screen sizes -->
     <!-- can be removed for main build unless otherwise needed -->
-    <script>
-    $.getScript( "/assets/js/helpers/measurethisshiz.js", function( data, textStatus, jqxhr ) {
-        console.log( textStatus ); // Success
-        console.log( jqxhr.status ); // 200
-        console.log( "Measurethisshiz - Load was performed." );
-      });
-    // trigger measurement
-    $(window).load(function(){
-      // $("body").MeasureThisShiz();
-    });
-    </script>
+    <script src="/assets/js/my-project.js"></script>
 </body>
 </html>
