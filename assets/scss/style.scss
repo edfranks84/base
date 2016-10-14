@@ -70,6 +70,7 @@
 	7.0. Base
 ----------------------------------------- */
 
+@import "animisition";
 @import "base";
 
 
@@ -95,8 +96,9 @@
 	12.0. Content
 ----------------------------------------- */
 
-@import "content";
 @import "buttons";
+@import "forms";
+@import "content";
 @import "home";
 
 /* -----------------------------------------

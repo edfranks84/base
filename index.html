@@ -1,27 +1,189 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<meta charset="UTF-8">
-	<title>Document</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- inject:css -->
-  <link rel="stylesheet" href="/assets/css/my-project.css">
-  <!-- endinject -->
-
-	<script src="/assets/js/vendor/modernizr.js"></script>
-	<script src="/bower_components/jquery/dist/jquery.min.js"></script>
-
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- inject:css -->
+    <link rel="stylesheet" href="/assets/css/my-project.css">
+    <!-- endinject -->
+    <script src="/assets/js/vendor/modernizr.js"></script>
+    <script src="/bower_components/jquery/dist/jquery.min.js"></script>
 </head>
+
 <body>
-	<h1>Base</h1>
-  <p>Updated 11/03/16</p>
 
-  <div class="test">
-    <h1>Test</h1>
-  </div>
+    <div class="animsition">
 
-	<!-- triggers the measurement plugin for screen sizes -->
-    <!-- can be removed for main build unless otherwise needed -->
+        <header>
+            <div class="nav-bar">
+                <div class="container">
+                    <div class="main-logo">
+                        <a href="/">
+                            <img src="/assets/images/logo.png">
+                        </a>
+                    </div>
+                    <nav class="main-nav">
+                        <div class="nav" id="navInsmenu">
+                            <ul id="menu" class="menu">
+                                <li class="nodiv liLinkActive" id="menu0"><a class="linkActive" href="/" title="Home">Home</a></li>
+                                <li class="nodiv" id="menu1"><a href="/" title="About">About</a></li>
+                                <li class="nodiv" id="menu2"><a href="/" title="Services">Services</a></li>
+                                <li class="nodiv" id="menu3"><a href="/" title="Contact">Contact</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                    <div class="nav-button">
+                        <button class="hamburger hamburger--elastic" type="button">
+                            <span class="hamburger-box">
+                                <span class="hamburger-inner"></span>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <section class="hero">
+            <div class="container">
+                <div class="hero__image">
+                    <img src="/assets/images/hero-bg.jpg">
+                </div>
+                <div class="hero__content">
+                    <h1>Hero Text</h1>
+                    <h5>Hero Content</h5>
+                </div>
+            </div>
+        </section>
+
+        <div class="test">
+            <h1>Test</h1>
+        </div>
+
+        <footer>
+            <div class="footer-content">
+                <p>© 2016 Company Name | Website designed by <a href="#">The Smarter Web Company</a></p>
+            </div>
+        </footer>
+
+        <nav class="mobile-nav">
+            <div class="nav" id="navInsmenu">
+                <ul id="menu" class="menu">
+                    <li class="nodiv liLinkActive" id="menu0"><a class="linkActive" href="/" title="Home">Home</a></li>
+                    <li class="nodiv" id="menu1"><a href="#" title="About">About</a></li>
+                    <li class="nodiv" id="menu2"><a href="#" title="Services">Services</a></li>
+                    <li class="nodiv" id="menu3"><a href="#" title="Contact">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+
+    </div>
+
     <script src="/assets/js/my-project.js"></script>
+    <script>
+    $(document).ready(function() {
+
+        $(function() {
+            var header = $("header");
+            $(window).scroll(function() {
+                var scroll = $(window).scrollTop();
+
+                if (scroll >= 300) {
+                    header.addClass("scrolled");
+                } else {
+                    header.removeClass("scrolled");
+                }
+            });
+        });
+
+        $(".mobile-nav .menu>li").each(function(i, el) {
+            $(el).css("animation-delay", i * 200 + 200 + "ms");
+        });
+
+
+        function showMenu() {
+            var menuOpen = false;
+            $(".nav-button").on("click", function() {
+                if (menuOpen) {
+                    $(".hamburger").removeClass("is-active");
+                    $(document.body).removeClass("show-menu");
+                } else {
+                    $(".hamburger").addClass("is-active");
+                    $(document.body).addClass("show-menu");
+                }
+                menuOpen = !menuOpen;
+            });
+            var responsiveWidth = Modernizr.mq('(min-width: 960px)');
+            if (responsiveWidth === true) {
+                $(document.body).removeClass("show-menu");
+                $(".hamburger").removeClass("is-active");
+            }
+        }
+        showMenu();
+        window.onresize = showMenu;
+
+        var menuItem = $("#menu>li");
+        menuItem.each(function() {
+            if ($(this).has('ul').length) {
+                $(this).addClass("parent");
+            }
+        });
+
+        var menuParent = $(".parent");
+        menuParent.each(function() {
+            $('> a', this).click(function(event) {
+                event.preventDefault();
+            });
+            $(this).click(function(event) {
+                $(this).toggleClass('open');
+            });
+
+            var clonelink = $(this).children().prop('outerHTML');
+            console.log(clonelink);
+            $(this).find("ul").prepend("<li>" + clonelink + "</li>");
+        });
+
+        $(".touchevents .element").on('click', function() {
+            $(".element").removeClass("active");
+            $(this).addClass("active");
+        });
+
+        $(function() {
+            $(document).trigger("enhance");
+        });
+
+        $(".csstransitions .animsition").animsition({
+            inClass: 'fade-in',
+            outClass: 'fade-out-up',
+            inDuration: 1200,
+            outDuration: 800,
+            linkElement: '.menu li:not(.parent) a',
+            //linkElement: 'a:not([target="_blank"]):not([href^=#])',
+            // e.g. linkElement: 'a:not([target="_blank"]):not([href^=#])'
+            loading: true,
+            loadingParentElement: 'body', //animsition wrapper element
+            loadingClass: 'animsition-loading',
+            loadingInner: '', // e.g '<img src="loading.svg" />'
+            timeout: false,
+            timeoutCountdown: 5000,
+            onLoadEvent: true,
+            browser: ['animation-duration', '-webkit-animation-duration'],
+            // "browser" option allows you to disable the "animsition" in case the css property in the array is not supported by your browser.
+            // The default setting is to disable the "animsition" in a browser that does not support "animation-duration".
+            overlay: false,
+            overlayClass: 'animsition-overlay-slide',
+            overlayParentElement: 'body',
+            transition: function(url) {
+                window.location.href = url;
+            }
+        });
+        $('body').on('animsition.inEnd', function() {
+            $(this).addClass("page-loaded");
+        })
+
+    });
+    </script>
 </body>
+
 </html>

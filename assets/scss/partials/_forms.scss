@@ -1,0 +1,108 @@
+input {
+    line-height: normal;
+}
+
+input, textarea, keygen, select, button {
+    text-rendering: auto;
+    color: initial;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: start;
+    margin: 0em 0em 0em 0em;
+    font: 13.3333px Arial;
+}
+
+[type='text'], [type='password'], [type='date'], [type='datetime'], [type='datetime-local'], [type='month'], [type='week'], [type='email'], [type='number'], [type='search'], [type='tel'], [type='time'], [type='url'], [type='color'], textarea {
+    display: block;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 100%;
+    //height: 2.4375rem;
+    padding: 1rem;
+    border: 1px solid #cacaca;
+    margin: 0 0 1rem;
+    font-family: inherit;
+    font-size: 1rem;
+    color: #0a0a0a;
+    background-color: #fefefe;
+    -webkit-box-shadow: inset 0 1px 2px rgba(10, 10, 10, 0.1);
+    box-shadow: inset 0 1px 2px rgba(10, 10, 10, 0.1);
+    border-radius: 0;
+    -webkit-transition: -webkit-box-shadow 0.5s, border-color 0.25s ease-in-out;
+    transition: box-shadow 0.5s, border-color 0.25s ease-in-out;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    &:focus{
+        outline: none;
+    }
+    &:focus,&:hover{
+        border-color: $base-light;
+    }
+}
+
+textarea {
+    border-radius: 0;
+    max-width: 100%;
+    height: auto;
+    min-height: 8em;
+    max-height: 8em;
+    border-radius: 0;
+    overflow: auto;
+}
+
+label {
+    display: block;
+    margin: 0;
+    font-size: 0.875rem;
+    font-weight: normal;
+    line-height: 1.8;
+    color: #0a0a0a;
+}
+input[type="submit"]{
+    padding: 0.8em 3em;
+    text-transform: uppercase;
+    font-size: 18px;
+    color: $white;
+    border: none;
+    background-color: $base-light;
+    transition: all 300ms ease-out;
+    display: inline-block;
+    text-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    min-width: 150px;
+    border-radius: 0;
+    white-space: nowrap;
+    font-family: $heading-font;
+    font-weight: 600;
+    cursor: pointer;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    &:hover{
+        background-color: $base-dark;
+        color: $white;
+        text-decoration: none;
+    }
+}
+input[type="file"]{
+    width: 100%;
+    padding: 1rem;
+    border: 1px solid #cacaca;
+    margin-bottom: 2em;
+    border-radius: 0;
+}
+.inputset{
+    position: relative;
+}
+.form_error_wrap{
+    display: none;
+}
+.form_error_specific{
+    color: red;
+    position: absolute;
+    top: 3px;
+    right: 2px;
+}
