@@ -53,11 +53,13 @@ $grid-width: $max-width;
 $BREAKPOINTS: (
   tiny: 320px,
   480: 480px,
+  600: 600px,
   640: 640px,
   700: 700px,
   768: 768px,
   768to920: (768px 920px),
   920: 920px,
+  responsive: 920px,
   1200: 1200px,
   1250: 1250px,
   1260: 1260px,

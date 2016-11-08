@@ -6,3 +6,236 @@
   include all global navigation styles here. 
 
 \* ---------------------------------------------- */
+
+.main-nav{
+	display: none;
+	@include respond-to(responsive){
+		display: table-cell;
+	}
+	.nav{
+		float: right;
+		>ul{
+			padding-left: 2em;
+			>li{
+				float: left;
+			    position: relative;
+			    list-style: none;
+			    padding: 0 0.75em;
+			    >a{
+			    	text-decoration: none;
+				    color: #FFFFFF;
+				    display: block;
+				    padding: 2.5em 0;
+				    font-family: $heading-font-bold;
+				    text-transform: uppercase;
+				    font-weight: normal;
+				    font-size: 0.75em;
+				    @include respond-to(920){
+				    	font-size: 0.835em;
+				    }
+				    @include respond-to(1070){
+				    	font-size: 1em;
+				    }
+				    .scrolled &{
+				    	padding: 0.65em 0;
+				    }
+			    }
+			    &.liLinkActive{
+			    	background-color: $comp;
+			    	>a{
+			    		color: $base;
+			    	}
+			    	&:hover{
+				    	background-color: $comp;
+				    	>a{
+				    		color: $base;
+				    	}
+				    }
+			    }
+			    &:hover{
+			    	background-color: darken($base, 10%);
+			    	>a{
+			    		color: $comp;
+			    	}
+			    	>ul{
+			    		.no-cssanimations &{
+							display: block;
+				    	}
+				    	.cssanimations &{
+							visibility: visible;
+							animation: fade-in-down 300ms ease-out forwards;
+				    	}
+			    	}
+			    }
+			    >ul{
+			    	position: absolute;
+			    	top: 100%;
+			    	padding: 1rem 0.5rem;
+			    	min-width: 10em;
+			    	background-color: rgba(darken($base, 10%),0.95);
+			    	box-shadow: 0 3px 12px 0 rgba(0,0,0,0.1);
+			    	left: 0;
+			    	text-align: left;
+			    	.no-cssanimations &{
+						display: none;
+			    	}
+			    	.cssanimations &{
+						opacity: 0;
+						visibility: hidden;
+						transform: translateY(-100%);
+			    	}
+			    	>li{
+						display: block;
+						a{
+							display: block;
+							white-space: nowrap;
+							padding: 0.5em 1em;
+							font-family: $body-font;
+							color: #fff;
+							font-size: 14px;
+						}
+						&:hover{
+							//background-color: darken($base, 12%);
+							a{
+								color: $comp;
+							}
+						}
+			    	}
+			    }
+			}
+		}
+	}
+}
+
+
+.mobile-nav{
+	opacity: 0;
+    visibility: hidden;
+    z-index: -1;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: $black;
+	padding: 6em 0 4em;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	overflow-y: scroll;
+	// transform: translateY(-100%);
+	// transform-style: preserve-3d;
+	// transform: perspective(800px) rotateX(-90deg);
+	transform: scale(0.5);
+	-ms-overflow-style: -ms-autohiding-scrollbar;
+	transition: opacity 250ms ease-out, transform 400ms ease-out;
+	&::-webkit-scrollbar { width: 0 !important }
+	.show-menu &{
+		opacity: 1;
+	    visibility: visible;
+	    z-index: 1000;
+	    // transform: perspective(800px) rotateX(0deg);
+	    transform: scale(1);
+	}
+	@include respond-to(responsive){
+		opacity: 0;
+	    visibility: hidden;
+	    z-index: -1;
+	}
+	.nav{
+    	overflow: hidden;
+    	text-align: center;
+   		margin: auto;
+   		backface-visibility: hidden;
+	    width: 100%;
+	    text-align: center;
+	    padding: 0 8%;
+    	>ul{
+    		height: 100%;
+    		backface-visibility: hidden;
+    	}
+    	li{
+    		//margin: 0.5em 0;
+    		display: block;
+    		.cssanimations &{
+				opacity: 0;
+				transform: translateY(20px);
+			}
+			.show-menu &{
+				animation: fade-in-down-big 300ms ease-out forwards;
+			}
+			&.parent{
+				// display: inline-block;
+				// position: relative;
+				>a{
+					display: inline-block;
+					vertical-align: middle;
+				
+					&:after{
+						content:"+";
+						color: #fff;
+						display: inline-block;
+						margin-left: 0.5em;
+						// float: right;
+						// position: absolute;
+						// right: 0;
+						// top: 50%;
+						line-height: 1;
+						font-size: 16px;
+						transform: rotate(0deg);
+						transition: transform 300ms ease-out;
+					}
+					&:hover{
+						&:after{
+							color: $base-light;
+						}
+					}
+				}
+				&.open{
+					>a{
+						&:after{
+							transform: rotate(225deg);
+						}
+					}
+				}
+			}
+    		a{
+				padding: 0.5em 2em;
+				display: block;
+			    font-size: 15px;
+			    line-height: 1.75;
+			    text-transform: uppercase;
+			    color: #fff;
+			    font-family: $heading-font-bold;
+			    @include respond-to(480){
+			    	line-height: 2.5;
+			    }
+			    &:hover{
+			    	color: $base-light;
+			    	text-decoration: none;
+			    }
+    		}
+    		&.open{
+		    	>ul{
+		    		display: block;
+		    	}
+		    }
+    		>ul{
+    			padding-bottom: 1em;
+    			display: none;
+    			li{
+    				a{
+    					font-size: 13px;
+    					font-family: $body-font;
+    					line-height: 1.5;
+    					font-weight: 300;
+    					color: rgba($white,0.7);
+    					&:hover{
+    						color: #fff;
+    					}
+    				}
+    			}
+    		}
+    	}
+	}
+}
