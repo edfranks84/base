@@ -24,9 +24,25 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-
-//Some utility
-.is-Padded{
-	padding-top: em(50);
-	padding-bottom: em(50);
+.main-content{
+	max-width: 1000px;
+	margin: auto;
+	ul{
+	    list-style-type: disc;
+	    margin-left: 1.25rem;
+	    line-height: 1.6;
+	    margin-bottom: 1rem;
+	    li{
+	    	display: list-item;
+	    }
+	}
+	ul{
+	    list-style-type: decimal;
+	    margin-left: 1.25rem;
+	    line-height: 1.6;
+	    margin-bottom: 1rem;
+	    li{
+	    	display: list-item;
+	    }
+	}
 }

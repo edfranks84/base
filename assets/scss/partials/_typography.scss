@@ -7,6 +7,14 @@
 
 \* ---------------------------------------------- */
 
+@font-face {
+  font-family: 'font-name';
+  src: url('#{$font-path}/font-name.eot');
+  src: url('#{$font-path}/font-name.eot?#iefix') format('embedded-opentype'),
+       url('#{$font-path}/font-name.woff') format('woff'),
+       url('#{$font-path}/font-name.ttf') format('truetype'),
+}
+
 h1, h2, h3, h4, h5, h6{
 	font-family: $heading-font;
 	font-style: normal;
