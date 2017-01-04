@@ -1,0 +1,116 @@
+header{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 1005;
+	&.scrolled{
+		position: fixed;
+		animation: fade-in-down 300ms ease-out forwards;
+		// .top-bar{
+		// 	display: none;
+		// }
+	}
+
+.nav-bar{
+	padding: 1em 0;
+	background-image: linear-gradient(180deg,rgba(0,0,0,0.8),rgba(0,0,0,0));
+	transition: all 300ms ease-out;
+	@include respond-to(480){
+		padding: 2em 0;
+	}
+	.scrolled &{
+		padding: 0.5em 0 0;
+		background-image: none;
+		background-color: #000;
+	}
+	.show-menu &{
+		background-image: linear-gradient(180deg,rgba(0,0,0,0.8),rgba(0,0,0,0));
+		background-color: transparent;
+	}
+}
+.main-logo{
+	width: 6em;
+	display: inline-block;
+	vertical-align: middle;
+	//transition: width 300ms ease-out;
+	@include respond-to(480){
+		width: 9em;
+	}
+	@include respond-to(1200){
+		width: 11em;
+	}
+	.scrolled &,.show-menu &{
+		width: 4em;
+	}
+}
+.main-nav{
+	width: calc(100% - 10em);
+	display: none;
+	vertical-align: middle;
+	transition: width 300ms ease-out;
+	@include respond-to(responsive){
+		display: inline-block;
+	}
+	@include respond-to(920){
+		width: calc(100% - 19em);
+	}
+	@include respond-to(1200){
+		width: calc(100% - 21em);
+	}
+	.scrolled &{
+		@include respond-to(responsive){
+			width: calc(100% - 5em);
+		}
+		@include respond-to(920){
+			width: calc(100% - 14em);
+		}
+		@include respond-to(1200){
+			width: calc(100% - 16em);
+		}
+	}
+}
+.top-social{
+	display: none;
+	width: 8em;
+	vertical-align: middle;
+	text-align: right;
+	@include respond-to(980){
+		display: inline-block;
+	}
+	&__inner{
+		display: inline-block;
+	}
+}
+.social__icon{
+	height: 2em;
+	width: 2em;
+	margin-left: 0.35em;
+	display: inline-block;
+	vertical-align: middle;
+	svg{
+		height: 2em;
+		width: 2em;
+		fill: #fff;
+	}
+	transition: transform 200ms ease-out;
+	&:hover{
+		transform: scale(1.2);
+	}
+}
+
+.nav-button{
+	display: inline-block;
+	width: calc(100% - 7em);
+	text-align: right;
+	vertical-align: middle;
+	@include respond-to(480){
+		width: calc(100% - 10em);
+	}
+	@include respond-to(responsive){
+		display: none;
+	}
+	.scrolled &,.show-menu &{
+		width: calc(100% - 5em);
+	}
+}

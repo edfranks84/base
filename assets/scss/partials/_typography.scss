@@ -27,7 +27,7 @@ h1, h2, h3, h4, h5, h6{
     }
 }
 
-h1{
+h1,.h1{
 	font-family: $heading-font;
 	font-size: ms(4);
 	@include respond-to(480){
@@ -38,7 +38,7 @@ h1{
 	}
 }
 
-h2{
+h2,.h2{
 	font-family: $heading-font;
 	font-size: ms(3);
 	@include respond-to(480){
@@ -46,27 +46,27 @@ h2{
 	}
 }
 
-h3{
+h3,.h3{
 	font-family: $heading-font;
 	font-size: ms(3);
 }
 
-h4{
+h4,.h4{
 	font-family: $heading-font;
 	font-size: ms(2);
 }
 
-h5{
+h5,.h5{
 	font-family: $heading-font;
 	font-size: ms(2);
 }
 
-h6{
+h6,.h6{
 	font-family: $heading-font;
 	font-size: ms(1);
 }
 
-p{	
+p,.p{	
 	font-family: $body-font;
 	font-size: ms(0);
 	line-height: 1.7;
