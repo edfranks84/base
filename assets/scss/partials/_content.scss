@@ -6,18 +6,18 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-// Each rule applied to an element should be as opinionated about it's own appearance as possible. 
-// For example, it you have an element that contains two text nodes it seems logical to apply the 
-// font size and line height to the wrapping element so the two text nodes will inherit from it. 
+// Each rule applied to an element should be as opinionated about it's own appearance as possible.
+// For example, it you have an element that contains two text nodes it seems logical to apply the
+// font size and line height to the wrapping element so the two text nodes will inherit from it.
 // However, this prevents that text node being moved to another location and rendering consistently.
 
-// Instead, apply the color, font-size and line-height to each node, even if they are initially very 
-// similar (perhaps at the outset only the colour differs). It will seem counter-intuitive at first 
+// Instead, apply the color, font-size and line-height to each node, even if they are initially very
+// similar (perhaps at the outset only the colour differs). It will seem counter-intuitive at first
 
 // Example:
 // .namespace-ModuleOrComponent_ChildNode-variant {}
 
-// "To illustrate the separate sections, here is the anatomy of that selector 
+// "To illustrate the separate sections, here is the anatomy of that selector
 // with the sections delineated with square brackets:"
 // .[namespace][-ModuleOrComponent][_ChildNode][-variant]
 
@@ -45,4 +45,51 @@
 	    	display: list-item;
 	    }
 	}
+}
+
+
+.split-section{
+    @include clearfix;
+    padding: 2em 0;
+    @include respond-to(600){
+        padding: 3em 0;
+    }
+    &__image,&__content{
+        @include respond-to(820){
+            width: 50%;
+            float: left;
+            padding: 0 2.5%;
+        }
+        @include respond-to(1300){
+            padding: 0 5%;
+        }
+    }
+    &__content{
+        opacity: 0;
+        transform: translateX(20px);
+        margin-top: 2em;
+        @include respond-to(600){
+            padding: 0 2.5em;
+        }
+        @include respond-to(820){
+            margin-top: 0;
+            transform: translateX(100px);
+        }
+	}
+    &.reverse{
+        .split-section__image{
+            @include respond-to(820){
+                float: right;
+            }
+        }
+    }
+    .flexbox &{
+        @include respond-to(820){
+            display: flex;
+            align-items: center;
+            &.reverse{
+                flex-direction: row-reverse;
+            }
+        }
+    }
 }

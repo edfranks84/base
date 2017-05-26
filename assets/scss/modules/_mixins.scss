@@ -40,3 +40,48 @@
 @function strip-unit($value) {
   @return $value / ($value * 0 + 1);
 }
+
+
+
+@mixin element-overlay($selector: a, $activate-class: '.inviewport'){
+    position: relative;
+    >#{$selector}{
+        opacity: 0;
+        // transition: opacity 10ms linear 600ms, background-color 300ms ease-out;
+        transition: opacity 10ms linear 600ms;
+    }
+    &:after{
+        content: "";
+        position: absolute;
+        top: 0;
+        width: 0;
+        height: calc(100% + 2px);
+        background-color: $base;
+        display: block;
+    }
+    #{$activate-class} &,.previewFrame &{
+        >#{$selector}{
+            opacity: 1;
+        }
+        &:after{
+            animation: element-overlay 800ms ease-out forwards 300ms;
+        }
+    }
+
+}
+@mixin clip-path($selector: a){
+    #{$selector}{
+        -webkit-clip-path: polygon(0 86%, 0 100%, 14% 100%, 0 100%);
+        clip-path: polygon(0 86%, 0 100%, 14% 100%, 0 100%);
+        opacity: 0;
+        // transition: all cubic-bezier(.43,.94,.53,1) 600ms;
+    }
+    &.inviewport,.previewFrame &{
+        #{$selector}{
+        // -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+        // clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+        // opacity: 1;
+            animation: clip-path-in cubic-bezier(.43,.94,.53,1) 600ms forwards;
+        }
+    }
+}

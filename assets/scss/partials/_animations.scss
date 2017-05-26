@@ -46,3 +46,93 @@
 			opacity: 1;
 		}
 	}
+	@keyframes fade-in-left{
+		0%{
+			transform: translateX(-20px);
+			opacity: 0;
+		}
+		100%{
+			transform: translate(0);
+			opacity: 1;
+		}
+	}
+	@keyframes fade-in-left-big{
+		0%{
+			transform: translateX(-100px);
+			opacity: 0;
+		}
+		100%{
+			transform: translate(0);
+			opacity: 1;
+		}
+	}
+	@keyframes fade-in-right{
+		0%{
+			transform: translateX(20px);
+			opacity: 0;
+		}
+		100%{
+			transform: translate(0);
+			opacity: 1;
+		}
+	}
+	@keyframes fade-in-right-big{
+		0%{
+			transform: translateX(100px);
+			opacity: 0;
+		}
+		100%{
+			transform: translate(0);
+			opacity: 1;
+		}
+	}
+	@keyframes grow{
+		0%{
+			transform: scale(0);
+			opacity: 0;
+		}
+		100%{
+			transform: scale(1);
+			opacity: 1;
+		}
+	}
+
+	@keyframes element-overlay{
+		0%{
+			// transform: translateX(-105%);
+			width: 0;
+			left: 0;
+			animation-timing-function: cubic-bezier(.72,.11,.61,.89);
+		}
+		30%{
+			width: 100%;
+			left: 0;
+			animation-timing-function: cubic-bezier(.72,.11,.61,.89);
+		}
+		50%{
+			// transform: translateX(0);
+			width: 100%;
+			right: 0;
+			left: auto;
+			animation-timing-function: cubic-bezier(.72,.11,.61,.89);
+		}
+
+		100%{
+			// transform: translateX(105%);
+			width: 0%;
+			right: 0;
+			animation-timing-function: cubic-bezier(.72,.11,.61,.89);
+		}
+	}
+	@keyframes clip-path-in{
+		0%{
+			-webkit-clip-path: polygon(0 86%, 0 100%, 14% 100%, 0 100%);
+	        clip-path: polygon(0 86%, 0 100%, 14% 100%, 0 100%);
+	        opacity: 0;
+		}
+		100%{
+			-webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+	        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+	        opacity: 1;
+		}
+	}
