@@ -60,7 +60,7 @@
             float: left;
             padding: 0 2.5%;
         }
-        @include respond-to(1300){
+        @include respond-to(1260){
             padding: 0 5%;
         }
     }

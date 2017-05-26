@@ -57,7 +57,7 @@
 		@include respond-to(600){
 
 		}
-		@include respond-to(990){
+		@include respond-to(920){
 			width: calc(31.333% - 5px);
 			flex-basis: 31.333%;
 			margin: 1%;
@@ -178,7 +178,7 @@
 	background-color: #fff;
 
 	&.hasImage{
-		@include respond-to(1036){
+		@include respond-to(1030){
 			.cssvhunit.object-fit &{
 				position: relative;
 			    padding-left: 50%;
@@ -216,7 +216,7 @@
 					// @include respond-to(768){
 					// 	padding: 6em 4em 1em;
 					// }
-					@include respond-to(1300){
+					@include respond-to(1260){
 						padding: 6em 7em 1em;
 					}
 					p{
@@ -242,7 +242,7 @@
 	@include respond-to(768){
 		padding: 6em 4em;
 	}
-	@include respond-to(1300){
+	@include respond-to(1260){
 		padding: 6em 7em;
 	}
 	h1{
@@ -279,7 +279,7 @@
 	@include respond-to(920){
 		margin: 0rem -2em 3rem;
 	}
-	@include respond-to(1060){
+	@include respond-to(1030){
 		margin: 0rem -5em 3rem;
 	}
 	img{
