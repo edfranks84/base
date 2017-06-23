@@ -3,7 +3,7 @@
   Partial: nav
 
   All navigation styles here. This is sort that we can try keep things seperated and easy to maintain. You can
-  include all global navigation styles here. 
+  include all global navigation styles here.
 
 \* ---------------------------------------------- */
 
@@ -170,20 +170,24 @@
 				>a{
 					display: inline-block;
 					vertical-align: middle;
-				
+
 					&:after{
-						content:"+";
-						color: #fff;
-						display: inline-block;
-						margin-left: 0.5em;
-						// float: right;
-						// position: absolute;
-						// right: 0;
-						// top: 50%;
-						line-height: 1;
-						font-size: 16px;
-						transform: rotate(0deg);
-						transition: transform 300ms ease-out;
+						content: "";
+					    background-image: url(#{$svg-path}/cross.svg);
+					    background-position: 50% 50%;
+					    background-size: contain;
+					    background-repeat: no-repeat;
+					    color: #222;
+					    display: inline-block;
+					    height: 0.75em;
+					    width: 0.75em;
+					    position: relative;
+					    left: 1rem;
+					    line-height: 1;
+					    font-size: 16px;
+					    -ms-transform: rotate(0deg);
+					    transform: rotate(0deg);
+					    transition: transform 300ms ease-out;
 					}
 					&:hover{
 						&:after{
