@@ -157,10 +157,13 @@
              window.location=$(this).find("a").attr("href");
              return false;
         });
-        
-        $('body').on('animsition.inEnd', function() {
-            $(this).addClass("page-loaded");
-        })
+
+        $(window).load(function() {
+          window.setTimeout(function() {
+            $('body').addClass("page-loaded");
+          },100);
+        });
+
 
     });
     </script>
