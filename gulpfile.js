@@ -119,7 +119,7 @@ gulp.task('sass', function() {
      }))
     .pipe(plumber())
     .pipe(sass({style: 'expanded', includePaths: [ './assets/scss/partials', './assets/scss/modules', './assets/scss/helpers' ], errLogToConsole: true }))
-    .pipe(autoprefix('last 3 version'))
+    .pipe(autoprefix('last 6 version'))
     .pipe(rename(pkg.name + '.css'))
     .pipe(gulp.dest('assets/css'))
     // .pipe(reload({stream: true}))

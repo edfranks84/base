@@ -103,3 +103,45 @@ input[type="file"]{
     top: 3px;
     right: 2px;
 }
+.error{
+    background-color: #fcbca6;
+    padding: 1em;
+    border: 1px solid firebrick;
+    font-size: 0.875rem;
+    color: firebrick;
+    @include respond-to(640){
+        padding: 2rem 3rem;
+    }
+}
+.errorTitle{
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+.errorItem{
+    padding: 2px 0;
+}
+
+.alert{
+    padding: 1em;
+    color: #d68f15;
+    background-color: #fbf5db;
+    border: 1px solid #d68f15;
+    font-size: 0.875rem;
+    font-weight: 700;
+    @include respond-to(640){
+        padding: 2rem 3rem;
+    }
+}
+
+.success{
+    padding: 1em;
+    color: green;
+    background-color: MintCream;
+    border: 1px solid green;
+    font-size: 0.875rem;
+    font-weight: 700;
+    margin-bottom: 1em;
+    @include respond-to(640){
+        padding: 2rem 3rem;
+    }
+}
