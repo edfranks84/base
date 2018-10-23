@@ -1,133 +1,125 @@
-/* ---------------------------------------------- *\
+*, *:before, *:after { 
+  	box-sizing: border-box;
+}
 
-  Partial: base
+html { 
+	font-size: 100%; 
+	text-size-adjust: 100%; 
+}
 
-  Here you place the base defaults to any project
-
-\* ---------------------------------------------- */
-
-	*, *:before, *:after { 
-	  	box-sizing: border-box;
+body {
+	color: $black;
+	font-family: $body-font;
+	font-size: 14px;
+	line-height: $font-lineheight;
+	margin: 0;	
+	@include fluid-type(font-size, 600px, 1030px, 14px, 16px);
+	// @include respond-to(920){
+	// 	font-size: $font-size+px;
+	// }
+	&.show-menu{
+		overflow: hidden;
 	}
+}
 
-	html { 
-		font-size: 100%; 
-		text-size-adjust: 100%; 
-	}
-	
-	body {
-		color: $black;
-		font-family: $body-font;
-		font-size: 14px;
-		line-height: $font-lineheight;
-		margin: 0;	
-		@include fluid-type(font-size, 600px, 1030px, 14px, 16px);
-		// @include respond-to(920){
-		// 	font-size: $font-size+px;
-		// }
-		&.show-menu{
-			overflow: hidden;
+html, body{ height: 100%; min-height: 100%; }
+
+small {
+	font-size: 0.85em;
+}
+
+ul li {
+	list-style: none;
+}
+
+ol li {
+	list-style: none;
+}
+
+img, object, embed {
+	height: auto;
+	max-width: 100%;
+}	
+
+blockquote {
+	color: $white;
+	font-size: 1.1em;
+	font-style: italic;
+	margin: 0 0 1.250em 1.250em;
+	padding: 0.625em 1.250em 1.250em;
+	p {
+		&:last-child {
+			margin-bottom: 0;
 		}
 	}
-
-	html, body{ height: 100%; min-height: 100%; }
-
-	small {
-		font-size: 0.85em;
-	}
-	
-	ul li {
-		list-style: none;
-	}
-	
-	ol li {
-		list-style: none;
-	}
-	
-	img, object, embed {
-		height: auto;
-		max-width: 100%;
-	}	
-	
-	blockquote {
-		color: $white;
-		font-size: 1.1em;
-		font-style: italic;
-		margin: 0 0 1.250em 1.250em;
-		padding: 0.625em 1.250em 1.250em;
-		p {
-			&:last-child {
-				margin-bottom: 0;
-			}
-		}
-	}
-	
-	
-/*********************************************
-	- 2.0 -  LINKS
-*********************************************/
-
-	/* - 2.1. - BASE LINK STYLES
-	------------------------------------------ */
-
-	a {
-		color: $link;
-		cursor: pointer;
-		text-decoration:none;
-		&:visited {
-
-		}
-		&:hover {
-			color: $link-hover;
-		}
-		&:active {
-			
-		}
-		&:focus {
-			color: $link-focus;
-		}
-		/* Improve readability when focused and hovered in all browsers: h5bp.com/h */
-		&:focus,
-		&:active {
-			outline: none;
-		}
-	}
-	
-	
-	/* - 2.2. - HEADER LINKS 
-	------------------------------------------ */
-	
-	h1 a, h2 a, h3 a, h4 a, h5 a, h6 a,
-	.h1 a, .h2 a, .h3 a, .h4 a, .h5 a, .h6 a {
-		color: $link;
-	}
+}
 
 
 /*********************************************
-	- 3.0 -  Helpers
+- 2.0 -  LINKS
 *********************************************/
 
-	.hide {
-		display: none;
-	}
-	
-	.center-align {
-		text-align: center;
-	}
+/* - 2.1. - BASE LINK STYLES
+------------------------------------------ */
 
-	.container{
-		@include clearfix;
-		width: 100%;
-		margin: auto;
-		padding: 0 2em;
-		max-width: 1260px;
+a {
+	color: $link;
+	cursor: pointer;
+	text-decoration:none;
+	&:visited {
+
 	}
-	
-	section{
-		padding: 4em 0;
-		background-color: #fff;
-		@include clearfix;
-		@include respond-to(600){
-			padding: 6em 0;
-		}
+	&:hover {
+		color: $link-hover;
 	}
+	&:active {
+		
+	}
+	&:focus {
+		color: $link-focus;
+	}
+	/* Improve readability when focused and hovered in all browsers: h5bp.com/h */
+	&:focus,
+	&:active {
+		outline: none;
+	}
+}
+
+
+/* - 2.2. - HEADER LINKS 
+------------------------------------------ */
+
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a,
+.h1 a, .h2 a, .h3 a, .h4 a, .h5 a, .h6 a {
+	color: $link;
+}
+
+
+/*********************************************
+- 3.0 -  Helpers
+*********************************************/
+
+.hide {
+	display: none;
+}
+
+.center-align {
+	text-align: center;
+}
+
+.container{
+	// @include clearfix;
+	width: 86%;
+	margin: auto;
+	// padding: 0 2em;
+	max-width: 1400px;
+}
+
+section{
+	padding: 3em 0;
+	background-color: #fff;
+	@include clearfix;
+	@include respond-to(600){
+		padding: 6em 0;
+	}
+}

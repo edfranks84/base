@@ -1,29 +1,3 @@
-////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-// Experimenting with a BEM methodology called ECSS
-// http://ecss.io
-
-////////////////////////////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-// Each rule applied to an element should be as opinionated about it's own appearance as possible.
-// For example, it you have an element that contains two text nodes it seems logical to apply the
-// font size and line height to the wrapping element so the two text nodes will inherit from it.
-// However, this prevents that text node being moved to another location and rendering consistently.
-
-// Instead, apply the color, font-size and line-height to each node, even if they are initially very
-// similar (perhaps at the outset only the colour differs). It will seem counter-intuitive at first
-
-// Example:
-// .namespace-ModuleOrComponent_ChildNode-variant {}
-
-// "To illustrate the separate sections, here is the anatomy of that selector
-// with the sections delineated with square brackets:"
-// .[namespace][-ModuleOrComponent][_ChildNode][-variant]
-
-////////////////////////////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////////////////////////////
-
 .main-content{
 	max-width: 1000px;
 	margin: auto;

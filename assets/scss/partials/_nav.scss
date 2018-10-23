@@ -1,23 +1,12 @@
-/* ---------------------------------------------- *\
-
-  Partial: nav
-
-  All navigation styles here. This is sort that we can try keep things seperated and easy to maintain. You can
-  include all global navigation styles here.
-
-\* ---------------------------------------------- */
-
 .main-nav{
 	display: none;
 	@include respond-to(responsive){
-		display: table-cell;
+		display: block;
 	}
 	.nav{
-		float: right;
 		>ul{
-			padding-left: 2em;
+			display: flex;
 			>li{
-				float: left;
 			    position: relative;
 			    list-style: none;
 			    padding: 0 0.75em;
